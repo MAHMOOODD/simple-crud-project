@@ -1,0 +1,237 @@
+* {
+  margin: 0;
+  padding: 0;
+  
+}
+body {
+  background-color: #222;
+  color: #fff;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
+}
+
+.crud {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.head {
+  margin: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.head h1 {
+  font-size: 40px;
+  text-shadow:
+    2px 2px 5px #fff,
+    -2px -2px 10px #4e0707f4;
+  transition: all 0.4s ease;
+}
+.head p {
+  font-size: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-shadow:
+    2px 2px 5px #fff,
+    -2px -2px 10px #4e0707f4;
+  transition: all 0.4s ease;
+}
+.head p:hover,
+.head h1:hover {
+  text-shadow:
+    2px 2px 5px #d70b0b,
+    -2px -2px 10px #340a0af4,
+    0 0 20px #fff;
+  cursor: pointer;
+}
+
+input {
+  width: 100%;
+  height: 30px;
+  outline: none;
+  border: none;
+  margin: 5px 0px;
+  border-radius: 5px;
+  padding: 4px;
+  background-color: rgba(0, 0, 0, 0.394);
+  color: #ffffff;
+  cursor: pointer;
+}
+input:focus {
+  background-color: rgb(0, 0, 0);
+  box-shadow: 0 0 5px #fff;
+  scale: 1.1;
+  cursor: text;
+}
+
+.price {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+#total {
+  background-color: purple;
+  padding: 5px;
+  border-radius: 5px;
+  display: flex;
+  letter-spacing: 1px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+#total::before {
+  content: "Total: ";
+}
+button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  margin: 10px 0px 0px 4px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #fff;
+  background-color: rgba(94, 4, 94, 0.651);
+  cursor: pointer;
+  transition: 0.6 ease;
+  text-transform: uppercase;
+  transition: all 0.4s ease;
+}
+button:hover {
+  background-color: rgba(151, 8, 151, 0.9);
+  box-shadow: 0 0 10px #fff;
+  letter-spacing: 2px;
+}
+
+.outputs {
+    margin: 10px 0px;
+}
+#delete:hover {
+  background-color: red;
+  transform: scale(1.1);
+   width: 100%;
+}
+#update:hover {
+  background-color: rgb(13, 144, 124);
+  transform: scale(1.1);
+   width: 100%;
+}
+
+.search-buttons{
+    display: flex;
+    gap: 50px;
+}
+
+#delete-all{
+  margin-top: 20px;
+  transition:  .6s all ease;
+}
+#delete-all:hover{
+
+ background-color: red;
+}
+.hidden{
+  display: none;
+}
+.button-cell {
+  width: fit-content;
+
+}
+table{
+    width: 100%;
+    margin: 30px auto;
+    border-spacing: 5px;
+    text-transform: uppercase;
+    box-shadow: 2px 2px 20px #da63fb, 0px 0px 5px #f8f8f8;
+      border-radius: 5px;
+    
+
+}
+ th, td{
+    margin: 5px;
+    padding: 5px;
+    width: auto;
+    height: 10px;
+    text-align: center;  
+     background-color: rgba(151, 8, 151, 0.165);
+     border-radius: 5px;
+     
+
+}
+th{
+    background-color: rgba(151, 8, 151, 0.651);
+}
+td button{
+    margin: auto;
+    padding: 10px;
+    width: auto;
+    font-size: 14px;
+    background-color: transparent;
+}
+td:hover {
+    background-color: rgba(124, 7, 124, 0.651);
+    cursor: pointer;
+}
+
+
+
+@media (max-width: 600px) {
+  .crud {
+    width: 95%; /* زيادة المساحة قليلاً على الموبايل */
+  }
+
+  .head h1 {
+    font-size: 26px;
+  }
+
+  .head p {
+    font-size: 14px;
+  }
+
+  /* جعل المدخلات لا تكبر بشكل مبالغ فيه عند الـ focus */
+  input:focus {
+    scale: 1.02; 
+  }
+
+  /* التعامل مع أزرار البحث */
+  .search-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  /* أهم جزء: جعل الجدول يستجيب للمساحة الضيقة */
+  .outputs {
+    overflow-x: auto; /* إضافة شريط تمرير أفقي إذا كان الجدول عريضاً */
+  }
+
+  table {
+    width: 100%;
+    font-size: 12px; /* تصغير الخط قليلاً */
+    border-spacing: 2px;
+  }
+
+  th, td {
+    padding: 8px 4px;
+  }
+
+  /* تصغير أزرار الجدول لتناسب المساحة */
+  td button {
+    padding: 5px;
+    font-size: 10px;
+  }
+}
